@@ -1,4 +1,6 @@
-# Astro & Tailwind CSS Starter kit by lexingtonthemes.com
+# Astro & Tailwind CSS Starter Kit
+
+by https://lexingtonthemes.com
 
 ## Template Integrations
 - @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
@@ -40,4 +42,4 @@ All commands are run from the root of the project, from a terminal:
 
 ## Want to learn more?
 
-Feel free to check Asträs [documentation](https://docs.astro.build)
+Feel free to check Astroäs [documentation](https://docs.astro.build)
