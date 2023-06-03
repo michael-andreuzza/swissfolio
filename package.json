@@ -1,0 +1,25 @@
+{
+  "name": "@lexington/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "@astrojs/image": "^0.13.0",
+    "@astrojs/tailwind": "^3.0.0",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/alpinejs": "^3.7.1",
+    "astro": "^2.0.2"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrolib/seo": "^0.3.0",
+    "astro-compress": "^1.1.25"
+  }
+}
