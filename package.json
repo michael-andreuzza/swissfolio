@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrolib/seo": "^0.3.0",
-    "astro-compress": "^1.1.25"
+    "@astrolib/seo": "^0.3.0"
   }
 }
