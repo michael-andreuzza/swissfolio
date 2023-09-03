@@ -3,11 +3,7 @@ export interface Template {
   description: string;
   title: string;
 };
-const svgdoodles: Template = {
-  url: "https://www.svgdoodles.com/",
-  description: " A free collection of 208 super duper SVG Doodles to spice up your online and offline designs!",
-  title: "SVG Doodles"
-};
+
 const svggradients: Template = {
   url: "https://www.svggradients.com/",
   description: " A free collection of SVG Mesh gradients to use in your design tool or HTML!",
@@ -23,17 +19,13 @@ const vscodethemes: Template = {
   description: " A collection of 7 VS Code themes",
   title: "VS Code Themes"
 };
-const flabbergasted: Template = {
-  url: "https://marketplace.visualstudio.com/publishers/wicked-labs",
-  description: "My newsletter about tech news and articles, tools and tips for UI Designers & Developers.",
-  title: "Flabbergasted"
-};
+
 export const byName = {
-  svgdoodles,
+
   svggradients,
-    quicksetup,
-    vscodethemes,
-  flabbergasted
+  quicksetup,
+  vscodethemes,
+
 
 };
 export const otherprojects = Object.values(byName);

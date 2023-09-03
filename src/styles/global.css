@@ -21,10 +21,12 @@
 /* CSS */
 :root {
   font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+  font-variant-numeric: tabular-nums;
 }
 
 @supports (font-variation-settings: normal) {
   :root {
     font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
+    font-variant-numeric: tabular-nums;
   }
 }
