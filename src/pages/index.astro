@@ -4,46 +4,10 @@ import Hero from "../components/landing/Hero.astro";
 import Body from "../components/landing/Body.astro";
 import Testimonials from "../components/landing/Testimonials.astro";
 import Features from "../components/landing/Features.astro";
-import { AstroSeo } from "@astrolib/seo";
+
 ---
 
-<!---
-Use AstroSeo in all the pages you want different Seo than the index page
--->
-<AstroSeo
-  title="Michael Andreuzza "
-  description="Michael Andreuzza portfolio"
-  canonical="https://michaelandreuzza.com"
-  openGraph={{
-    url: "https://michaelandreuzza.com",
-    title: "Michael Andreuzza portfolio",
-    description: "Michael Andreuzza portfolio",
-    images: [
-      {
-        url: "https://michaelandreuzza.com/opengraph/facebook.png",
-        width: 1200,
-        height: 630,
-        alt: "Social open graph",
-        type: "image/png",
-      },
-      {
-        url: "https://www.michaelandreuzza.com/opengraph/twitter.png",
-        width: 4096,
-        height: 4096,
-        alt: "Twitter open graph",
-        type: "image/jpeg",
-      },
-      { url: "https://michaelandreuzza.com/opengraph/fb.png" },
-      { url: "https://michaelandreuzza.com/opengraph/twitter.png" },
-    ],
-    site_name: "Michael Andreuzza portfolio",
-  }}
-  twitter={{
-    handle: "@Mike_Andreuzza",
-    site: "@Mike_Andreuzza",
-    cardType: "summary_large_image",
-  }}
-/>
+
 <BaseLayout>
   <Hero />
   <Body />

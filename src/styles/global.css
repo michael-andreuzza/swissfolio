@@ -1,32 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --astro-code-color-text: #fe361b;
-  --astro-code-color-background: #ffffff;
-  --astro-code-token-constant: #555555;
-  --astro-code-token-string: #555555;
-  --astro-code-token-comment: #00000080;
-  --astro-code-token-keyword: black;
-  --astro-code-token-parameter: seashell;
-  --astro-code-token-function: black;
-  --astro-code-token-string-expression: #fe351b;
-  --astro-code-token-punctuation: linen;
-  --astro-code-token-link: honeydew;
-}
-
-
-
 /* CSS */
 :root {
-  font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
-  font-variant-numeric: tabular-nums;
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+  "liga" 1,
+  "calt" 1, /* Contextual Alternates */
+  "dlig" 1, /* Discretionary Ligatures */
+  "ss07" 1, /* fSquare punctuation */
+  "ss08" 1, /* Square quotes */
+  "zero" 1, /* Slashed zero */
+  "tnum" 1, /* Tabular numbers */
+    "cv03", /* Open six */
+    "cv04" 1, /* Open nine */
+    "cv01" 1, /* Alternate one */
+    "cv09", /* Flat-top three */
+    "cv02" 1; /* Open 4 */
 }
-
 @supports (font-variation-settings: normal) {
+  /* Use variable font if supported */
   :root {
-    font-family: 'Neue Haas Grotesk Text Pro', sans-serif;
-    font-variant-numeric: tabular-nums;
+    font-family: InterVariable, sans-serif;
   }
 }
