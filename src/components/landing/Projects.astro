@@ -1,0 +1,87 @@
+---
+// Define the array of projects directly in the frontmatter script.
+const otherprojects = [
+  {
+    "url": "https://www.lexingtonthemes.com/",
+    "title": "Lexington Themes",
+    "description": "Premium themes and UI Kits For designers, developers, businesses, and personal use — Beautifully crafted with Astro.js, and Tailwind CSS — Simple & easy to customize."
+  },
+  {
+    "url": "https://www.windstatic.com/",
+    "title": "Windstatic",
+    "description": "A set of 161 elements & layouts made with Tailwind CSS and Alpine.js. Skillfully designed with an eye for aesthetics, offering an excellent starting point for your upcoming project."
+  },
+  {
+    "url": "https://www.colorsandfonts.com/",
+    "title": "Colors & Fonts",
+    "description": "Color and typography resources and inspiration for Web Developers and Digital Designers."
+  },
+  {
+    "url": "https://www.svgdoodles.com/",
+    "title": "SVG Doodles",
+    "description": "A free collection of 208 super duper SVG doodles for your creative projects."
+  }
+  // Add more projects as needed...
+];
+
+// Function to calculate `data-aos-duration` based on index
+function calculateAosDuration(index) {
+  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+}
+---
+
+<section class="bg-primary">
+  <div class="px-8 2xl:max-w-7xl mx-auto py-32">
+    <div class="space-y-2">
+      <!-- Section Title and Decorative Elements -->
+      <div
+        class="h-0.5 bg-secondary"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
+      </div>
+      <h3
+        class="text-secondary text-base font-medium"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+      >
+        <span>Main</span>
+        <span class="font-bold">projects</span>
+      </h3>
+    </div>
+
+    <ul
+      class="mx-auto grid grid-cols-1 sm:grid-cols-2 text-secondary md:grid-cols-3 lg:grid-cols-4 items-start gap-6 mt-32"
+      role="list"
+    >
+      {
+        otherprojects.map((project, index) => (
+          <li
+            class="flow-root h-full"
+            data-aos="fade-up"
+            data-aos-duration={calculateAosDuration(index)}
+          >
+            <a href={project.url}>
+              <div class="h-full flex flex-col justify-between">
+                <div>
+                  <p class="group-hover:text-secondary/70 text-secondary text-9xl font-black lg:rotate-90 xl:-translate-x-28 lg:-translate-x-16 lg:mb-8 xl:mb-0">
+                    0{index + 1}.
+                  </p>
+                  <p class="italic shrink-0">{project.title}</p>
+                  <p class="text-base mt-3 leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
+                <div>
+                  <p class="mt-3 text-base font-semibold">
+                    Learn more &nbsp; ↗
+                  </p>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
