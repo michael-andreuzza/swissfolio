@@ -4,10 +4,12 @@ by https://lexingtonthemes.com
 
 ## Template Integrations
 - @astrojs/tailwind - https://docs.astro.build/en/guides/integrations-guide/tailwind/
-- @astrojs/image - https://docs.astro.build/en/guides/integrations-guide/image/
 - @astrojs/sitemap - https://docs.astro.build/en/guides/integrations-guide/sitemap/
-- Astrolib SEO - https://github.com/onwidget/astrolib/tree/main/packages/seo
-- Astro compress - https://github.com/NikolaRHristov/astro-compress#readme
+
+## License
+
+This template is open-source software licensed under the [GPL-3.0 license](https://opensource.org/licenses/GPL-3.0). Feel free to fork, modify, and use it in your projects.
+
 ## Template Structure
 
 Inside of your Astro project, you'll see the following folders and files:
