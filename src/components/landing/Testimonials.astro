@@ -1,6 +1,5 @@
 ---
-// Define testimonials/opinions data
-const humanOpinions = [
+const testimonials = [
   {
     name: "Amrit Nagi",
     role: "Founder of Tailwind Toolbox",
@@ -26,6 +25,10 @@ const humanOpinions = [
       "I have had the absolute pleasure of working with Mike in the past when building my blog Raspada with its Backend UI or to building a private application for a leading hearing care company. Mike’s knowledge and attention to detail is second to none, and he really understands and listens to his clients (me).",
   },
 ];
+// Function to calculate `data-aos-duration` based on index
+function calculateAosDuration(index) {
+  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
+}
 ---
 
 <section class="bg-primary">
@@ -36,17 +39,18 @@ const humanOpinions = [
         <span>human</span>
         <span class="font-bold">opinions</span>
       </h3>
-      <div class="h-1.5 bg-secondary"></div>
+      
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 pt-2 mt-2">
+    <div class="flex flex-col text-secondary pt-2 mt-2 gap-12 lg:gap-32">
       {
-        humanOpinions.map((opinion) => (
-         <div>
-            <p class="italic text-2xl block font-bold">
-              {opinion.name} {opinion.role}
-            </p>
-            <p class="text-sm leading-relaxed mt-6">
+        testimonials.map((opinion, index) => (
+         <div    data-aos="fade-up"
+         data-aos-duration={calculateAosDuration(index)} class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4">
+            <p class="text-3xl leading-6 lg:col-span-3 lg:text-5xl lg:leading-9 indent-32 lg:indent-32">
               {opinion.opinion}
+            </p>
+            <p class="italic text-xs block ">
+              {opinion.name} {opinion.role}
             </p>
          </div>
         ))
