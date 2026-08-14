@@ -1,9 +1,44 @@
 @import "tailwindcss";
+
 @theme {
-  --font-sans: Geist, sans-serif;
-  --color-secondary: #161614;
-  --color-primary: #f4f5ef;
+  --font-sans: Geist, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --color-paper: oklch(0.985 0.001 106.424);
+  --color-ink: oklch(0.216 0.006 56.043);
+  --color-accent: oklch(0.653 0.235 32.106);
 }
+
+html {
+  color-scheme: light;
+}
+
 * {
   font-variant-numeric: tabular-nums;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-pending.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -4,38 +4,35 @@ import { AstroSeo } from "@lexingtonthemes/seo";
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Your Site Name",
-  url: "https://yoursite.com/",
-  description: "A brief description of your website content.",
+  "@type": "Person",
+  name: "Jarvis",
+  url: "https://example.com/",
+  description:
+    "Independent designer and creative developer based in Amsterdam.",
 };
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A brief description of your website content."
-  canonical="https://yoursite.com/"
+  title="Jarvis — Independent Designer & Developer"
+  description="Independent designer and creative developer creating identities, websites, and digital products."
+  canonical="https://example.com/"
   openGraph={{
-    url: "https://yoursite.com/",
-    title: "Your Page Title",
-    description: "A brief description of your website content.",
+    url: "https://example.com/",
+    title: "Jarvis — Independent Designer & Developer",
+    description:
+      "Independent designer and creative developer creating identities, websites, and digital products.",
     images: [
       {
-        url: "https://yoursite.com/og-image.jpg",
+        url: "https://example.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Open Graph Image Alt",
+        alt: "Jarvis portfolio",
         type: "image/jpeg",
       },
     ],
-    site_name: "Your Site Name",
+    site_name: "Jarvis",
     type: "website",
     locale: "en_US",
-  }}
-  twitter={{
-    handle: "@yourhandle",
-    site: "@yoursite",
-    cardType: "summary_large_image",
   }}
 />
 
@@ -43,8 +40,8 @@ const structuredData = {
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="author" content="Your Name or Company Name" />
-<meta name="theme-color" content="#0000ff" />
+<meta name="author" content="Jarvis" />
+<meta name="color-scheme" content="light" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <!-- Favicons -->
@@ -57,11 +54,9 @@ const structuredData = {
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
   rel="stylesheet"
 />

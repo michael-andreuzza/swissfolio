@@ -1,62 +1,71 @@
 ---
+import Wrapper from "../Wrapper.astro";
+import Text from "../Text.astro";
+
 const testimonials = [
   {
-    name: "Amrit Nagi",
-    role: "Founder of Tailwind Toolbox",
+    name: "Elena Voss",
+    role: "Founder, Northline",
     opinion:
-      "I've been following Mike's career for a while now and it's amazing just how quickly the quality and variety of his work has developed and evolved! He's always learning or working on something new and constantly refining his work to be the best! His attention to detail, 'can do' attitude and work ethic is refreshing and he will definitely help you succeed!",
+      "Jarvis found the idea we were struggling to articulate and turned it into a system that felt unmistakably ours. The work was sharp, thoughtful, and built to grow with us.",
   },
   {
-    name: "Gabriel Perales",
-    role: "Software Engineer at Cabify",
+    name: "Marcus Chen",
+    role: "Creative Director, Forma",
     opinion:
-      "Mike has helped me with many designs, and I couldn't follow his working speed when we worked together. His designs are slick, and he delivers a lot of value; he is constantly iterating his designs and making improvements.",
+      "He moves easily between the big picture and the smallest interaction. Every decision had a reason, and the final product was stronger because of that discipline.",
   },
   {
-    name: "Volkan Kaya",
-    role: "Founder of Versoly.com",
+    name: "Imani Brooks",
+    role: "Editor, Common Ground",
     opinion:
-      "Mike is a rare breed of designer & developer that understands business needs. He leveraged his previous experience to build out a few landing pages very quickly for Versoly.",
+      "The process was direct and collaborative. Jarvis listened carefully, challenged the right things, and gave the publication a digital identity with real character.",
   },
   {
-    name: "Mike",
-    role: "Blogger at Raspada",
+    name: "Theo Martin",
+    role: "Product Lead, Fieldwork",
     opinion:
-      "I have had the absolute pleasure of working with Mike in the past when building my blog Raspada with its Backend UI or to building a private application for a leading hearing care company. Mike’s knowledge and attention to detail is second to none, and he really understands and listens to his clients (me).",
+      "Jarvis brought clarity to a complicated product without sanding away what made it different. The result feels simple, confident, and genuinely useful.",
   },
 ];
-// Function to calculate `data-aos-duration` based on index
-function calculateAosDuration(index) {
-  return 1500 + index * 500; // Example: Increment duration by 500ms for each project
-}
 ---
 
-<section class="bg-primary">
-  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="mt-6 space-y-2">
-      <div class="h-0.5 bg-secondary"></div>
-      <h3 class="text-secondary text-base font-medium">
-        <span>human</span>
-        <span class="font-bold">opinions</span>
-      </h3>
+<section class="bg-accent text-paper">
+  <Wrapper class="py-20 md:py-32">
+    <div class="flex justify-between">
+      <div>
+        <Text variant="meta">04</Text>
+        <Text variant="meta" class="mt-1 text-paper/50">Opinions</Text>
+      </div>
+      <Text variant="meta" class="max-w-32 text-right text-paper/50">
+        In their own words
+      </Text>
     </div>
-    <div class="flex flex-col text-secondary pt-2 mt-2 gap-12 lg:gap-32">
+
+    <Text variant="display" class="my-20 md:my-28 text-center">
+      People<br />talk.
+    </Text>
+
+    <ul class="grid grid-cols-12 border-t border-l border-paper" role="list">
       {
-        testimonials.map((opinion, index) => (
-          <div
-            data-aos="fade-up"
-            data-aos-duration={calculateAosDuration(index)}
-            class="grid grid-cols-1 lg:items-end lg:grid-cols-4 py-4 gap-4"
+        testimonials.map((item, index) => (
+          <li
+            class="col-span-12 md:col-span-6 flex flex-col justify-between gap-12 border-b border-r border-paper p-6 md:p-8 min-h-full"
+            data-reveal
+            data-reveal-delay={index * 100}
           >
-            <p class="text-3xl  lg:col-span-3 lg:text-5xl  indent-32 lg:indent-32">
-              {opinion.opinion}
-            </p>
-            <p class="italic text-xs block ">
-              {opinion.name} {opinion.role}
-            </p>
-          </div>
+            <Text tag="blockquote" variant="quote" class="max-w-[60ch]">
+              {item.opinion}
+            </Text>
+            <footer>
+              <Text variant="meta">{item.name}</Text>
+              <Text variant="meta" class="mt-1 text-paper/50">
+                {item.role}
+              </Text>
+            </footer>
+          </li>
         ))
       }
-    </div>
-  </div>
+    </ul>
+  </Wrapper>
 </section>

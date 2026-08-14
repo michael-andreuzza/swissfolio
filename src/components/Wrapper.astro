@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {}
+
+const { class: extraClass = "", ...attributes } = Astro.props;
+const classes = `mx-auto max-w-7xl px-4 ${extraClass}`.trim();
+---
+
+<div class={classes} {...attributes}>
+  <slot />
+</div>

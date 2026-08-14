@@ -2,19 +2,44 @@
 import BaseHead from "../components/BaseHead.astro";
 ---
 
-<html lang="en" class="selection:bg-secondary selection:text-secondary">
+<html lang="en">
   <head>
     <BaseHead />
   </head>
 
-  <body class="bg-primary">
+  <body class="bg-paper text-ink antialiased">
     <slot />
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
-    ></script>
-    <script type="text/javascript">
-      AOS.init({
-        once: true, // animation will happen only once
-      });
+
+    <script>
+      const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      if (!reducedMotion) {
+        const elements =
+          document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (!entry.isIntersecting) continue;
+
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          },
+          { rootMargin: "0px 0px -40px", threshold: 0.05 },
+        );
+
+        for (const element of elements) {
+          element.style.setProperty(
+            "--reveal-delay",
+            `${element.dataset.revealDelay ?? 0}ms`,
+          );
+          element.classList.add("reveal-pending");
+          observer.observe(element);
+        }
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,66 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Tag =
+  | "p"
+  | "a"
+  | "span"
+  | "small"
+  | "strong"
+  | "em"
+  | "blockquote"
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6";
+
+type Variant =
+  | "meta"
+  | "body"
+  | "wordmark"
+  | "display"
+  | "displayHero"
+  | "displayLarge"
+  | "projectTitle"
+  | "quote";
+
+interface Props extends HTMLAttributes<"p"> {
+  tag?: Tag;
+  variant?: Variant;
+  href?: string;
+  target?: string;
+  rel?: string;
+}
+
+const textStyles: Record<Variant, string> = {
+  meta: "font-mono text-xs uppercase",
+  body: "text-sm leading-relaxed text-pretty",
+  wordmark:
+    "text-[clamp(5rem,22vw,18rem)] font-bold tracking-[-0.09em] leading-[0.72]",
+  display:
+    "text-[clamp(3rem,8vw,7rem)] font-bold uppercase tracking-[-0.07em] leading-[0.78]",
+  displayHero:
+    "text-[clamp(3rem,9vw,8rem)] font-bold uppercase tracking-[-0.07em] leading-[0.76]",
+  displayLarge:
+    "text-[clamp(4rem,14vw,12rem)] font-bold uppercase tracking-[-0.08em] leading-[0.7]",
+  projectTitle:
+    "text-[clamp(2.25rem,5vw,4.5rem)] font-bold tracking-[-0.06em] leading-[0.85]",
+  quote:
+    "text-[clamp(1.25rem,2.5vw,1.75rem)] font-light leading-snug text-pretty",
+};
+
+const {
+  tag: Tag = "p",
+  variant = "body",
+  class: extraClass = "",
+  ...attributes
+} = Astro.props as Props;
+
+const classes = `${textStyles[variant]} ${extraClass}`.trim();
+---
+
+<Tag class={classes} {...attributes}>
+  <slot />
+</Tag>

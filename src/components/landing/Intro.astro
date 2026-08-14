@@ -1,59 +1,58 @@
-<section class="bg-primary">
-  <div class="px-8 2xl:max-w-7xl mx-auto py-6">
-    <div class="grid grid-cols-1 lg:grid-cols-4 text-secondary gap-6 text-lg">
-      <p
-        class="text-3xl lg:col-span-3 lg:text-5xl indent-32 lg:indent-32"
-        data-aos="fade-up"
-        data-aos-duration="2000"
-      >
-        I'm a self-taught front-end designer and developer who enjoys creating
-        modern designs with Tailwind CSS. I have customers worldwide and have
-        had successful projects. Recently, two of my projects were acquired, and
-        I'm currently working on Lexington Themes. I also curate Colors &amp;
-        Fonts and create VS Code Themes.
-      </p>
-      <p
-        class="text-lg lg:col-start-2 leading-relaxed underline underline-offset-4"
-        data-aos="fade-up"
-        data-aos-duration="2500"
-      >
-        I am currently available for Enquires. If you need a landing page or
-        redesign something that you already have, do not hesitate to get in
-        contact. <a href="#_">michael@andreuzza.com</a>
-      </p>
-      <p
-        class="lg:col-start-4 leading-relaxed"
-        data-aos="fade-up"
-        data-aos-duration="2500"
-      >
-        As a solo developer, I offer a unique and personalized approach to
-        design and build exclusively and responsive landing pages using Astro
-        and Tailwind CSS.
-      </p>
-      <p
-        class="lg:col-start-4 leading-relaxed"
-        data-aos="fade-up"
-        data-aos-duration="3000"
-      >
-        My singular focus on your project ensures efficient and effective
-        results, delivering a stunning website tailored to your specific
-        business needs and goals.
-        <br /><br />
-        With a deep understanding of modern design principles and user behavior,
-        I prioritize creating websites that not only look visually appealing but
-        also drive meaningful engagement.
-        <br /><br />
-        Trust in my expertise to craft unique, high-performing solutions that help
-        you stand out in a competitive market, turning your vision into a reality.
-      </p>
-      <p
-        class="text-3xl lg:col-span-3 lg:text-7xl lg:col-start-2 lg:mt-48 indent-32 lg:indent-32"
-        data-aos="fade-up"
-        data-aos-duration="3000"
-      >
-        Together, we can create a digital experience that converts visitors into
-        loyal customers, leaving a lasting impression on your audience.
-      </p>
+---
+import Wrapper from "../Wrapper.astro";
+import Text from "../Text.astro";
+---
+
+<section id="about" class="bg-paper text-ink">
+  <Wrapper class="py-20 md:py-32">
+    <div class="flex justify-between">
+      <div>
+        <Text variant="meta" class="text-accent">02</Text>
+        <Text variant="meta" class="mt-1 text-ink/40">Profile</Text>
+      </div>
+      <Text variant="meta" class="max-w-32 text-right text-ink/40">
+        Independent creative practice
+      </Text>
     </div>
-  </div>
+
+    <Text
+      variant="display"
+      class="mt-20 md:mt-32"
+      data-reveal
+    >
+      Clear ideas.<br />
+      Bold systems.<br />
+      <span class="text-accent">Built to last.</span>
+    </Text>
+
+    <div
+      class="mt-20 md:mt-32 grid grid-cols-12 border-t border-ink"
+    >
+      <Text class="col-span-12 py-6 md:col-span-4 md:pr-8">
+        I’m Jarvis, an independent designer and developer creating identities,
+        websites, and digital products for teams around the world.
+      </Text>
+      <Text
+        class="col-span-12 border-t border-ink py-6 md:col-span-4 md:border-l md:border-t-0 md:px-8"
+      >
+        My work moves from strategy and art direction through interface design
+        and production, keeping one clear idea intact from start to finish.
+      </Text>
+      <div
+        class="col-span-12 md:col-span-4 py-6 border-t md:border-t-0 md:border-l border-ink md:pl-8"
+      >
+        <Text>
+          I partner with a small number of clients at a time, working closely
+          with the people making the decisions.
+        </Text>
+        <Text
+          tag="a"
+          variant="meta"
+          href="mailto:hello@jarvis.studio"
+          class="mt-8 inline-flex min-h-[44px] items-center text-accent outline-none focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2 hover:opacity-60"
+          >Start a project ↗</Text
+        >
+      </div>
+    </div>
+  </Wrapper>
 </section>
